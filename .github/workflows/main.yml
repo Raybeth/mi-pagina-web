@@ -19,10 +19,10 @@ jobs:
           node-version: 22
 
       - name: Install Surge
-        run: npm install -g surge
+        run: npm ci -g surge
 
       - name: Deploy to Surge
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         run: |
-          surge ./ https://mi-pagina-web.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+          surge ./ https://mi-pagina-web-testing.surge.sh --token ${{ secrets.SURGE_TOKEN }}
